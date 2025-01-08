@@ -94,6 +94,11 @@ GEM
     docile (1.4.1)
     drb (2.2.1)
     erubi (1.13.1)
+    factory_bot (6.5.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.4)
+      factory_bot (~> 6.5)
+      railties (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -226,6 +231,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  factory_bot_rails
   pg (~> 1.1)
   puma (>= 5.0)
   rack-cors
