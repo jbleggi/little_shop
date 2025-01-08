@@ -91,8 +91,24 @@
           1,
           null
         ]
+      },
+      "/Users/jillian/little_shop/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jillian/little_shop/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1736375803
+    "timestamp": 1736376291
   }
 }
