@@ -9,5 +9,8 @@ class Api::V1::MerchantsController < ApplicationController
     render json: MerchantSerializer.new(merchants)
   end
 
+  def show
+
+  end
 
 end
