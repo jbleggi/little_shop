@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  
+  get "/api/v1/merchants", to: "api/v1/merchants#index"
+  # get "/api/v1/merchants?sorted=age", to: "api/v1/merchants#index"
 
   get "/api/v1/merchant", to: "api/v1/merchant#index"
   get "/api/v1/merchant/:id", to: "api/v1/merchant#show"
