@@ -4,6 +4,9 @@ require 'rails_helper'
 require 'simplecov'
 SimpleCov.start 'rails'
 
+SimpleCov.add_filter '/app/channels/'
+SimpleCov.add_filter '/app/jobs/'
+SimpleCov.add_filter '/app/mailers/'
 
 RSpec.describe "Merchants endpoints", type: :request do
   it "sends a list of merchants" do
@@ -27,4 +30,12 @@ RSpec.describe "Merchants endpoints", type: :request do
       expect(merchant[:attributes][:name]).to be_a(String)
     end
   end
+
+  it "sorts merchants by created_at timestamp, newest first" do
+    get '/api/v1/merchants?sorted=age'
+
+    expect(response).to be_successful
+    expect(Merchant.maximum("created_at")).to eq(Merchant.order("created_at desc").pluck(:created_at).last)  
+  end
+
 end

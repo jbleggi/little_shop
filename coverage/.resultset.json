@@ -20,9 +20,15 @@
         "lines": [
           1,
           1,
-          1,
+          2,
+          0,
           null,
-          1,
+          2,
+          null,
+          null,
+          2,
+          null,
+          null,
           null,
           null
         ]
@@ -43,49 +49,6 @@
           null,
           null
         ]
-      },
-      "/Users/jillian/little_shop/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/jillian/little_shop/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/jillian/little_shop/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/jillian/little_shop/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       },
       "/Users/jillian/little_shop/app/models/customer.rb": {
         "lines": [
@@ -135,6 +98,6 @@
         }
       }
     },
-    "timestamp": 1736452447
+    "timestamp": 1736455771
   }
 }
