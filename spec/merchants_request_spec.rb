@@ -41,6 +41,18 @@ RSpec.describe "Merchants API", type: :request do
     expect(merchant_response).to be_a Hash
   end
 
+  it "can return all items associated with a merchant" do
+    merchant = create(:merchant)
   
+    item1 = create(:item, merchant: merchant)
+    item2 = create(:item, merchant: merchant)
+    item3 = create(:item, merchant: merchant)
+    
+    get "/api/v1/merchants/#{merchant.id}/items"
+    
+    result = JSON.parse(response.body, symbolize_names: true)
+  end
 
 end
+# result[:merchant][:data][:id] #merchant's id
+# result[:items][:data].length #31

@@ -17,5 +17,6 @@ class Api::V1::MerchantsController < ApplicationController
       merchant: MerchantSerializer.new(merchant),
       items: ItemSerializer.new(items)
     }
+    
   end
 end
