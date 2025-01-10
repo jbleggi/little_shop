@@ -41,4 +41,6 @@ RSpec.describe "Merchants API", type: :request do
     expect(merchant_response).to be_a Hash
   end
 
+  
+
 end

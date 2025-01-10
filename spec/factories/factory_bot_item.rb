@@ -3,6 +3,6 @@ FactoryBot.define do
       name { "Test Item #{rand(1000)}" }
       description { "This is a test item." }
       unit_price { 100.0 }
-      merchant
+      association :merchant
     end
   end
