@@ -31,3 +31,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Add the following to your .gitignore file to ensure that coverage results are not tracked by Git (optional):
+echo coverage >> .gitignore
