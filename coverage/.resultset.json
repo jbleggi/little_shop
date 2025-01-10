@@ -66,9 +66,9 @@
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
+          2,
+          2,
+          2,
           1,
           null,
           null
@@ -78,7 +78,7 @@
         "lines": [
           1,
           1,
-          2,
+          3,
           null,
           null
         ]
@@ -127,6 +127,46 @@
           null
         ]
       },
+      "/Users/jillian/little_shop/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/jillian/little_shop/spec/merchant_test_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/jillian/little_shop/app/serializers/merchant_serializer.rb": {
         "lines": [
           1,
@@ -134,6 +174,21 @@
           1,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/jillian/little_shop/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jillian/little_shop/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -146,15 +201,8 @@
           1,
           null
         ]
-      },
-      "/Users/jillian/little_shop/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1736475467
+    "timestamp": 1736475503
   }
 }

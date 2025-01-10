@@ -16,18 +16,15 @@ Rails.application.routes.draw do
   
   # index
   get "/api/v1/merchants", to: "api/v1/merchants#index"
-  # get "/api/v1/merchants?sorted=age", to: "api/v1/merchants#index"
+  get "/api/v1/merchants/:id", to: "api/v1/merchants#show"
+  post "/api/v1/merchants", to: "api/v1/merchants#create"
+  patch "/api/v1/merchants/:id", to: "api/v1/merchants#update"
+  delete "api/v1/merchants/:id", to: "api/v1/merchants#destroy"
 
-  get "/api/v1/merchant", to: "api/v1/merchant#index"
-  get "/api/v1/merchant/:id", to: "api/v1/merchant#show"
-  post "/api/v1/merchant", to: "api/v1/merchant#create"
-  patch "/api/v1/merchant/:id", to: "api/v1/merchant#update"
-  delete "api/v1/merchant/:id", to: "api/v1/merchant#destroy"
+  get "/api/v1/items", to: "api/v1/items#index"
+  get "/api/v1/items/:id", to: "api/v1/items#show"
+  post "/api/v1/items", to: "api/v1/items#create"
+  patch "/api/v1/items/:id", to: "api/v1/items#update"
+  delete "api/v1/items/:id", to: "api/v1/items#destroy"
 
-  get "/api/v1/item", to: "api/v1/item#index"
-  get "/api/v1/item/:id", to: "api/v1/item#show"
-  post "/api/v1/item", to: "api/v1/item#create"
-  patch "/api/v1/item/:id", to: "api/v1/item#update"
-  delete "api/v1/item/:id", to: "api/v1/item#destroy"
-  
 end
