@@ -51,6 +51,16 @@ RSpec.describe "Merchants API", type: :request do
     get "/api/v1/merchants/#{merchant.id}/items"
     
     result = JSON.parse(response.body, symbolize_names: true)
+    result_id = resultresult[:merchant][:data][:id] #merchant's id
+    items_count = result[:items][:data].length
+
+
+    expect(response).to be_successful
+
+    expect(merchant.id).to eq(result_id)
+
+    expect(items_count).to eq(3)
+
   end
 
 end

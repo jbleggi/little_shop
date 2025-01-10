@@ -13,6 +13,7 @@ class Api::V1::MerchantsController < ApplicationController
     merchant = Merchant.find(params[:id])
     items = merchant.items
     
+    if params[:id][:items]
     render json: {
       merchant: MerchantSerializer.new(merchant),
       items: ItemSerializer.new(items)
