@@ -16,10 +16,6 @@ Rails.application.routes.draw do
   
   # index
   get "/api/v1/merchants", to: "api/v1/merchants#index"
-<<<<<<< HEAD
-  # show
-  get "/api/v1/merchants/:id", to: "api/v1/merchants#show"
-=======
   # get "/api/v1/merchants?sorted=age", to: "api/v1/merchants#index"
 
   get "/api/v1/merchant", to: "api/v1/merchant#index"
@@ -34,5 +30,4 @@ Rails.application.routes.draw do
   patch "/api/v1/item/:id", to: "api/v1/item#update"
   delete "api/v1/item/:id", to: "api/v1/item#destroy"
   
->>>>>>> 6f7009211b90937eebc0e552b870932b741346e5
 end
