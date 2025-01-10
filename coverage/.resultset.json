@@ -66,9 +66,9 @@
         "lines": [
           1,
           1,
-          4,
-          4,
-          4,
+          1,
+          1,
+          1,
           1,
           null,
           null
@@ -78,7 +78,7 @@
         "lines": [
           1,
           1,
-          4,
+          5,
           null,
           null
         ]
@@ -125,9 +125,11 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/app/models/item.rb": {
+      "/Users/jillian/little_shop/app/models/merchant.rb": {
         "lines": [
           1,
+          1,
+          null,
           1,
           1,
           null
@@ -140,34 +142,24 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/app/models/merchant.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jillian/little_shop/app/controllers/api/v1/items_controller.rb": {
+      "/Users/jillian/little_shop/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
           1,
           1,
+          0,
+          null,
           1,
-          1,
+          null,
           null,
           1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
+          1,
           null,
           null,
           null,
@@ -177,6 +169,24 @@
       },
       "/Users/jillian/little_shop/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/jillian/little_shop/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jillian/little_shop/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
           1,
           null
         ]
@@ -191,6 +201,6 @@
         ]
       }
     },
-    "timestamp": 1736480322
+    "timestamp": 1736481916
   }
 }
