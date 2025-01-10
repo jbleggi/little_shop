@@ -1,4 +1,3 @@
-
 class Api::V1::MerchantsController < ApplicationController
   def index
     if params[:sorted] === 'age'
