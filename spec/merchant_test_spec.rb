@@ -1,23 +1,25 @@
 require 'rails_helper'
 # wrote comments in items for how this works
 
-RSpec.describe MerchantSerializer, type: :serializer do
-    describe "serializes" do
-        it 'serializes merchants' do
+RSpec.describe "Merchants Endpoints" do
+    describe "/api/v1/merchants" do
+        it "returns all merchants with the appropriate info" do 
+        get "/api/v1/merchants", headers:{"Content-type": "Application/JSON"}
 
-            merchant = create(:merchant)
-            serialize_merchant = MerchantSerializer.new(merchant).to_json
+        expect(response.status).to eq(200)
 
-            expect(serialize_merchant[:data]).to include(
-                id: ,
-                type: :merchant,
-                attributes: {
-                    id: merchant.id,
-                    name: merchant.name
-                    created_at: merchant.created_at.as_json          
-                    updated_at: merchant.updated_at.as_json
-                }
-            )
+        data = JSON.parse(response.body, symbolize_names: true)
+
+        expect(data).to be_a(Array)
+        expect(data[0]).to be_a(Hash)
+
+        expect(data[0]).to have_key(:id)
+        expect(data[0][:id]).to be_a(Integer)
+
+
+        expect(data[0]).to have_key(:name)
+        expect(data[0][:name]).to be_a(String)
+        
         end
     end
 end

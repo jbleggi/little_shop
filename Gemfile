@@ -41,6 +41,8 @@ group :development, :test do
   gem "rspec-rails"
   gem "pry"
   gem "shoulda-matchers"
+  gem 'simplecov'
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -48,12 +50,9 @@ group :development do
   # gem "spring"
 end
 
-gem 'simplecov', require: false, group: :test
-gem "factory_bot_rails"
+# , require: false, group: :test
+
 
 gem "jsonapi-serializer"
 
-group :development, :test do
-  gem 'rspec-rails', '~> 5.0.0'
-end
 #added rspec for rails. this way I can create a rails/spec_helper with ails generate rspec:install
