@@ -1,4 +1,3 @@
-
 class Api::V1::MerchantsController < ApplicationController
   def index
     if params[:sorted] === 'age'
@@ -8,5 +7,17 @@ class Api::V1::MerchantsController < ApplicationController
     end
     
     render json: MerchantSerializer.new(merchants)
+  end
+
+  def show
+    merchant = Merchant.find(params[:id])
+    items = merchant.items
+    
+    if params[:id][:items]
+    render json: {
+      merchant: MerchantSerializer.new(merchant),
+      items: ItemSerializer.new(items)
+    }
+    
   end
 end
