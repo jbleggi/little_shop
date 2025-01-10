@@ -10,11 +10,11 @@ RSpec.describe "Items API", type: :request do
 
     expect(response).to be_successful
 
-    items = JSON.parse(response.body, symbolize_names: true)
+    data = JSON.parse(response.body, symbolize_names: true)
 
-    expect(items[:data].count).to eq(3)
+    expect(data[:data].count).to eq(3)
     
-    items[:data].each do |item|
+    data[:data].each do |item|
       expect(item[:attributes]).to have_key(:id)
       expect(item[:attributes]).to have_key(:name)
       expect(item[:attributes]).to have_key(:description)
