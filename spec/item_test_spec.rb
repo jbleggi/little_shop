@@ -26,3 +26,17 @@ RSpec.describe ItemSerializer, type: :serializer do
     end
   end
 end
+
+RSpec.describe 'Merchants API', type: :request do
+  describe 'POST /api/v1/merchants' do
+    context 'with valid parameters' do
+      it 'creates a new merchant and returns the merchant in the response' do
+        
+        merchant_params = { name: 'New Merchant' }
+
+        post '/api/v1/merchants', params: merchant_params.to_json, headers: { 'Content-Type': 'application/json' }
+ 
+        expect(json['data']['type']).to eq('merchant')  
+        expect(json['data']['attributes']['name']).to eq('New Merchant')  
+      end
+    end

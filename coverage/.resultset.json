@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jillian/little_shop/config/initializers/cors.rb": {
+      "/Users/jacksonbickler/Mod2_projects/little_shop/config/initializers/cors.rb": {
         "lines": [
           null,
           null,
@@ -30,7 +30,7 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/config/initializers/filter_parameter_logging.rb": {
+      "/Users/jacksonbickler/Mod2_projects/little_shop/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -42,7 +42,7 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/config/initializers/inflections.rb": {
+      "/Users/jacksonbickler/Mod2_projects/little_shop/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -62,9 +62,36 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/config/routes.rb": {
+      "/Users/jacksonbickler/Mod2_projects/little_shop/spec/factories/factory_bot_item.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jacksonbickler/Mod2_projects/little_shop/spec/factories/factory_bot_merchants.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jacksonbickler/Mod2_projects/little_shop/config/routes.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           null,
           null,
@@ -77,11 +104,163 @@
           null,
           1,
           null,
+          null,
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jacksonbickler/Mod2_projects/little_shop/spec/requests/api/v1/merchants_request_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jacksonbickler/Mod2_projects/little_shop/spec/rails_helper.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1736458440
+    "timestamp": 1736528030
   }
 }
