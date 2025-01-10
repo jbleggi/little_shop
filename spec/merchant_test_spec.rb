@@ -13,9 +13,9 @@ RSpec.describe MerchantSerializer, type: :serializer do
                 type: :merchant,
                 attributes: {
                     id: merchant.id,
-                    name: merchant.name
-                    created_at: merchant.created_at.as_json          
-                    updated_at: merchant.updated_at.as_json
+                    name: merchant.name,
+                    created_at: merchant.created_at.as_json,          
+                    updated_at: merchant.updated_at.as_json,
                 }
             )
         end
