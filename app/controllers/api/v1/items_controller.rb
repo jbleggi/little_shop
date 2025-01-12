@@ -26,5 +26,3 @@ class Api::V1::ItemsController < ApplicationController
     render json: ItemSerializer.new(item)
   end
 end
-
-#items = Item.where(merchant_id: ${:id})
