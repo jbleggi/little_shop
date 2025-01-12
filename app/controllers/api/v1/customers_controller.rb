@@ -9,8 +9,6 @@ class Api::V1::CustomersController < ApplicationController
       else
         render json: { error: "Merchant not found" }, status: :not_found
       end
-    else
-      render json: { error: "Merchant ID is required" }, status: :unprocessable_entity
     end
   end
 end
