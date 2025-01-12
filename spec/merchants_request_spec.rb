@@ -58,4 +58,26 @@ RSpec.describe "Merchants API", type: :request do
     expect(Time.parse(result[:data][2][:attributes][:created_at])).to eq(merchant3.created_at)
   end
 
+  describe "GET /items/:id/merchant" do
+    it "returns the merchant associated with an item" do
+      merchant = create(:merchant)
+      item = create(:item, merchant: merchant)
+
+      get "/api/v1/items/#{item.id}/merchant"
+
+      result = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response).to be_successful
+      expect(result[:data][:attributes][:id]).to eq(merchant.id)
+      expect(result[:data][:attributes][:name]).to eq(merchant.name)
+    end
+
+    it "returns a 404 if the item is not found" do
+      get "/api/v1/items/9999/merchant"  
+
+      expect(response).to have_http_status(404)
+      result = JSON.parse(response.body, symbolize_names: true)
+      expect(result[:error]).to eq("Item not found")
+    end  
+  end
 end
