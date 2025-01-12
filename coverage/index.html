@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-12T10:55:17-05:00">2025-01-12T10:55:17-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-12T10:58:25-05:00">2025-01-12T10:58:25-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -38,12 +38,12 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>14</b> files in total.
+    <b>15</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>89</b> relevant lines,
-    <span class="green"><b>89</b> lines covered</span> and
+    <b>93</b> relevant lines,
+    <span class="green"><b>93</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -81,22 +81,33 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#12ed4b469f17b9bb142ada2dadd0e3efd73f0d5a" class="src_link" title="app/models/customer.rb">app/models/customer.rb</a></td>
+            <td class="strong t-file__name"><a href="#426455e712c7fc8c1aa2f77299ffdee1d327c4cd" class="src_link" title="app/models/invoice.rb">app/models/invoice.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">2</td>
-            <td class="cell--number">2</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">5</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#426455e712c7fc8c1aa2f77299ffdee1d327c4cd" class="src_link" title="app/models/invoice.rb">app/models/invoice.rb</a></td>
+            <td class="strong t-file__name"><a href="#76fbc48266296b39109c2a43aa8d11d6d01256dd" class="src_link" title="app/models/invoice_item.rb">app/models/invoice_item.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">5</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#1c11409296988efc622cf8594f9761e97349be72" class="src_link" title="app/models/item.rb">app/models/item.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -305,71 +316,6 @@
 </div>
 
       
-        <div class="source_table" id="12ed4b469f17b9bb142ada2dadd0e3efd73f0d5a">
-  <div class="header">
-    <h3>app/models/customer.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>2</b> relevant lines.
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">class Customer &lt; ApplicationRecord</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  has_many :invoices</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
         <div class="source_table" id="426455e712c7fc8c1aa2f77299ffdee1d327c4cd">
   <div class="header">
     <h3>app/models/invoice.rb</h3>
@@ -468,6 +414,160 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="7">
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="76fbc48266296b39109c2a43aa8d11d6d01256dd">
+  <div class="header">
+    <h3>app/models/invoice_item.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class InvoiceItem &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  belongs_to :invoice</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  belongs_to :item</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="1c11409296988efc622cf8594f9761e97349be72">
+  <div class="header">
+    <h3>app/models/item.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class Item &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  belongs_to :merchant</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  has_many :invoice_items</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
             
 
             

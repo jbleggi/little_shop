@@ -266,8 +266,9 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/app/models/customer.rb": {
+      "/Users/jillian/little_shop/app/models/invoice_item.rb": {
         "lines": [
+          1,
           1,
           1,
           null
@@ -290,8 +291,16 @@
           1,
           null
         ]
+      },
+      "/Users/jillian/little_shop/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1736697317
+    "timestamp": 1736697505
   }
 }
