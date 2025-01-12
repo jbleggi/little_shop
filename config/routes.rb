@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         get "/items", to: "items#index"
       end
       resources :items, only: [:index, :show, :create, :update, :destroy]
+        get "/merchant", to: "merchants#show"
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
