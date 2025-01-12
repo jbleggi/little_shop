@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-10T18:20:11-05:00">2025-01-10T18:20:11-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-11T21:25:14-05:00">2025-01-11T21:25:14-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -29,7 +29,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.42
+         1.69
        </span>
     </span> hits/line
     )
@@ -42,8 +42,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>101</b> relevant lines,
-    <span class="green"><b>101</b> lines covered</span> and
+    <b>105</b> relevant lines,
+    <span class="green"><b>105</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -72,11 +72,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#139f9de48f66b358664a604fc73c554680aa37c7" class="src_link" title="app/controllers/api/v1/items_controller.rb">app/controllers/api/v1/items_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">23</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">12</td>
+            <td class="cell--number">30</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.50</td>
+            <td class="cell--number">1.87</td>
             
           </tr>
         
@@ -215,9 +215,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5ed90d7fb31b4efbc3b0240583694cc8372591bc" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">18</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -230,7 +230,7 @@
             <td class="cell--number">6</td>
             <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">5.50</td>
+            <td class="cell--number">8.50</td>
             
           </tr>
         
@@ -241,7 +241,7 @@
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">4.00</td>
+            <td class="cell--number">5.67</td>
             
           </tr>
         
@@ -287,8 +287,8 @@
     
 
     <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>15</b> relevant lines.
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -324,36 +324,38 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="3">
+          <li class="covered" data-hits="5" data-linenumber="3">
             
-              <span class="hits">3</span>
-            
-
+              <span class="hits">5</span>
             
 
-            <code class="ruby">    items = Item.all</code>
+            
+
+            <code class="ruby">    if params[:merchant_id]  </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
+          <li class="covered" data-hits="1" data-linenumber="4">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      merchant = Merchant.find(params[:merchant_id]) </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="5">
+          <li class="covered" data-hits="1" data-linenumber="5">
             
-              <span class="hits">3</span>
-            
-
+              <span class="hits">1</span>
             
 
-            <code class="ruby">    render json: ItemSerializer.new(items)</code>
+            
+
+            <code class="ruby">      items = merchant.items  </code>
           </li>
         </div>
       
@@ -363,12 +365,66 @@
 
             
 
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="7">
+            
+              <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">      items = Item.all  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="10">
+            
+              <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">    render json: ItemSerializer.new(items)  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="12">
             
 
             
@@ -378,7 +434,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
+          <li class="covered" data-hits="1" data-linenumber="13">
             
               <span class="hits">1</span>
             
@@ -390,7 +446,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="9">
+          <li class="covered" data-hits="2" data-linenumber="14">
             
               <span class="hits">2</span>
             
@@ -402,7 +458,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="15">
             
 
             
@@ -412,7 +468,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="11">
+          <li class="covered" data-hits="2" data-linenumber="16">
             
               <span class="hits">2</span>
             
@@ -424,7 +480,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
+          <li class="covered" data-hits="1" data-linenumber="17">
             
               <span class="hits">1</span>
             
@@ -436,66 +492,12 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="18">
             
 
             
 
             <code class="ruby">      else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        render json: { message: &quot;Item not found&quot;, errors: [&quot;Item with id #{params[:id]} does not exist&quot;] }, status: 404</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def show </code>
           </li>
         </div>
       
@@ -507,7 +509,7 @@
 
             
 
-            <code class="ruby">    item = Item.find_by(id: params[:id])</code>
+            <code class="ruby">        render json: { message: &quot;Item not found&quot;, errors: [&quot;Item with id #{params[:id]} does not exist&quot;] }, status: 404</code>
           </li>
         </div>
       
@@ -517,12 +519,66 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
+          <li class="covered" data-hits="1" data-linenumber="23">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def show </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="24">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    item = Item.find_by(id: params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
             
               <span class="hits">1</span>
             
@@ -534,7 +590,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="27">
             
 
             
@@ -544,12 +600,32 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="28">
             
 
             
 
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+
+            
+
+            <code class="ruby">#items = Item.where(merchant_id: ${:id})</code>
           </li>
         </div>
       
@@ -2936,8 +3012,8 @@
     
 
     <div class="t-line-summary">
-      <b>17</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>18</b> relevant lines.
+      <span class="green"><b>18</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -2992,7 +3068,7 @@
 
             
 
-            <code class="ruby">      resources :merchants, only: [:index, :show, :create, :update, :destroy]</code>
+            <code class="ruby">      resources :merchants, only: [:index, :show, :create, :update, :destroy] do</code>
           </li>
         </div>
       
@@ -3004,7 +3080,7 @@
 
             
 
-            <code class="ruby">      resources :items, only: [:index, :show, :create, :update, :destroy]</code>
+            <code class="ruby">        get &quot;/items&quot;, to: &quot;items#index&quot;</code>
           </li>
         </div>
       
@@ -3014,17 +3090,19 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="7">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      resources :items, only: [:index, :show, :create, :update, :destroy]</code>
           </li>
         </div>
       
@@ -3034,7 +3112,7 @@
 
             
 
-            <code class="ruby">  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3044,7 +3122,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3054,7 +3132,7 @@
 
             
 
-            <code class="ruby">  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.</code>
+            <code class="ruby">  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html</code>
           </li>
         </div>
       
@@ -3064,12 +3142,32 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+
+            <code class="ruby">  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+
             <code class="ruby">  # Can be used by load balancers and uptime monitors to verify that the app is live.</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
+          <li class="covered" data-hits="1" data-linenumber="14">
             
               <span class="hits">1</span>
             
@@ -3081,7 +3179,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="15">
             
 
             
@@ -3091,7 +3189,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="16">
             
 
             
@@ -3101,7 +3199,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="17">
             
 
             
@@ -3111,7 +3209,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="18">
             
 
             
@@ -3121,36 +3219,12 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="19">
             
 
             
 
             <code class="ruby">  # index</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  get &quot;/api/v1/merchants&quot;, to: &quot;api/v1/merchants#index&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  get &quot;/api/v1/merchants/:id&quot;, to: &quot;api/v1/merchants#show&quot;</code>
           </li>
         </div>
       
@@ -3162,7 +3236,7 @@
 
             
 
-            <code class="ruby">  post &quot;/api/v1/merchants&quot;, to: &quot;api/v1/merchants#create&quot;</code>
+            <code class="ruby">  get &quot;/api/v1/merchants&quot;, to: &quot;api/v1/merchants#index&quot;</code>
           </li>
         </div>
       
@@ -3174,7 +3248,7 @@
 
             
 
-            <code class="ruby">  patch &quot;/api/v1/merchants/:id&quot;, to: &quot;api/v1/merchants#update&quot;</code>
+            <code class="ruby">  get &quot;/api/v1/merchants/:id&quot;, to: &quot;api/v1/merchants#show&quot;</code>
           </li>
         </div>
       
@@ -3186,17 +3260,19 @@
 
             
 
-            <code class="ruby">  delete &quot;api/v1/merchants/:id&quot;, to: &quot;api/v1/merchants#destroy&quot;</code>
+            <code class="ruby">  post &quot;/api/v1/merchants&quot;, to: &quot;api/v1/merchants#create&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="23">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  patch &quot;/api/v1/merchants/:id&quot;, to: &quot;api/v1/merchants#update&quot;</code>
           </li>
         </div>
       
@@ -3208,19 +3284,17 @@
 
             
 
-            <code class="ruby">  get &quot;/api/v1/items&quot;, to: &quot;api/v1/items#index&quot;</code>
+            <code class="ruby">  delete &quot;api/v1/merchants/:id&quot;, to: &quot;api/v1/merchants#destroy&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="25">
-            
-              <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="25">
             
 
             
 
-            <code class="ruby">  get &quot;/api/v1/items/:id&quot;, to: &quot;api/v1/items#show&quot;</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3232,7 +3306,7 @@
 
             
 
-            <code class="ruby">  post &quot;/api/v1/items&quot;, to: &quot;api/v1/items#create&quot;</code>
+            <code class="ruby">  get &quot;/api/v1/items&quot;, to: &quot;api/v1/items#index&quot;</code>
           </li>
         </div>
       
@@ -3244,7 +3318,7 @@
 
             
 
-            <code class="ruby">  patch &quot;/api/v1/items/:id&quot;, to: &quot;api/v1/items#update&quot;</code>
+            <code class="ruby">  get &quot;/api/v1/items/:id&quot;, to: &quot;api/v1/items#show&quot;</code>
           </li>
         </div>
       
@@ -3256,17 +3330,19 @@
 
             
 
-            <code class="ruby">  delete &quot;api/v1/items/:id&quot;, to: &quot;api/v1/items#destroy&quot;</code>
+            <code class="ruby">  post &quot;/api/v1/items&quot;, to: &quot;api/v1/items#create&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="covered" data-hits="1" data-linenumber="29">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  patch &quot;/api/v1/items/:id&quot;, to: &quot;api/v1/items#update&quot;</code>
           </li>
         </div>
       
@@ -3278,12 +3354,34 @@
 
             
 
-            <code class="ruby">  get &quot;/api/v1/merchants/:id/items&quot;, to: &quot;api/v1/merchants#show&quot;</code>
+            <code class="ruby">  delete &quot;api/v1/items/:id&quot;, to: &quot;api/v1/items#destroy&quot;</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="31">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &quot;/api/v1/merchants/:id/items&quot;, to: &quot;api/v1/items#index&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
             
 
             
@@ -3348,9 +3446,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="3">
+          <li class="covered" data-hits="16" data-linenumber="3">
             
-              <span class="hits">10</span>
+              <span class="hits">16</span>
             
 
             
@@ -3360,9 +3458,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="4">
+          <li class="covered" data-hits="16" data-linenumber="4">
             
-              <span class="hits">10</span>
+              <span class="hits">16</span>
             
 
             
@@ -3372,9 +3470,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="5">
+          <li class="covered" data-hits="16" data-linenumber="5">
             
-              <span class="hits">10</span>
+              <span class="hits">16</span>
             
 
             
@@ -3471,9 +3569,9 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="3">
+          <li class="covered" data-hits="15" data-linenumber="3">
             
-              <span class="hits">10</span>
+              <span class="hits">15</span>
             
 
             

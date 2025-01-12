@@ -29,6 +29,12 @@ RSpec.describe "Items API", type: :request do
 
       expect(item[:attributes]).to have_key(:merchant_id)
       expect(item[:attributes][:merchant_id]).to be_an Integer
+
+      expect(item[:attributes]).to have_key(:created_at)
+      expect(item[:attributes][:created_at]).to be_a String
+
+      expect(item[:attributes]).to have_key(:updated_at)
+      expect(item[:attributes][:updated_at]).to be_a String
     end
 
   end
@@ -71,5 +77,38 @@ RSpec.describe "Items API", type: :request do
     expect(response).to have_http_status(404)
   end
 
+  it "returns all items associated with a specific merchant" do
+    merchant = create(:merchant)
+    item1 = create(:item, merchant: merchant)
+    item2 = create(:item, merchant: merchant)
 
+    other_merchant = create(:merchant)
+    create(:item, merchant: other_merchant)
+
+    get "/api/v1/merchants/#{merchant.id}/items"
+
+    result = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+    
+    expect(result[:data].count).to eq(2)
+
+    result[:data].each do |item|
+      expect(item[:attributes][:merchant_id]).to eq(merchant.id)    
+    end
+  end
+
+  it "returns all items when no merchant_id is provided" do
+    item1 = create(:item)
+    item2 = create(:item)
+    item3 = create(:item)
+
+    get "/api/v1/items"
+
+    result = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to be_successful
+
+    expect(result[:data].count).to eq(3)
+  end
 end

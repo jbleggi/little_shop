@@ -29,7 +29,7 @@ RSpec.describe "Merchants API", type: :request do
     get "/api/v1/merchants/#{merchant_id}"
 
     merchant_response = JSON.parse(response.body, symbolize_names: true)
-    merchant_example = merchant_response[:merchant][:data][:attributes]
+    merchant_example = merchant_response[:data][:attributes]
     
     expect(response).to be_successful
 
@@ -51,9 +51,9 @@ RSpec.describe "Merchants API", type: :request do
     get "/api/v1/merchants/#{merchant.id}/items"
     
     result = JSON.parse(response.body, symbolize_names: true)
-    result_id = resultresult[:merchant][:data][:id] #merchant's id
+    binding.pry
+    result_id = result[:data][:attributes][:id] #merchant's id
     items_count = result[:items][:data].length
-
 
     expect(response).to be_successful
 
@@ -62,7 +62,4 @@ RSpec.describe "Merchants API", type: :request do
     expect(items_count).to eq(3)
 
   end
-
 end
-# result[:merchant][:data][:id] #merchant's id
-# result[:items][:data].length #31
