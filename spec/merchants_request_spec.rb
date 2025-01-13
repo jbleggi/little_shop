@@ -29,7 +29,7 @@ RSpec.describe "Merchants API", type: :request do
     get "/api/v1/merchants/#{merchant_id}"
 
     merchant_response = JSON.parse(response.body, symbolize_names: true)
-    merchant_example = merchant_response[:merchant][:data][:attributes]
+    merchant_example = merchant_response[:data][:attributes]
     
     expect(response).to be_successful
 
@@ -41,28 +41,21 @@ RSpec.describe "Merchants API", type: :request do
     expect(merchant_response).to be_a Hash
   end
 
-  it "can return all items associated with a merchant" do
-    merchant = create(:merchant)
-  
-    item1 = create(:item, merchant: merchant)
-    item2 = create(:item, merchant: merchant)
-    item3 = create(:item, merchant: merchant)
-    
-    get "/api/v1/merchants/#{merchant.id}/items"
-    
-    result = JSON.parse(response.body, symbolize_names: true)
-    result_id = resultresult[:merchant][:data][:id] #merchant's id
-    items_count = result[:items][:data].length
+  it "sorted=age returns merchants sorted by created_at in desc order" do
+    merchant1 = create(:merchant, created_at: "2025-01-05")
+    merchant2 = create(:merchant, created_at: "2025-01-11")
+    merchant3 = create(:merchant, created_at: "2025-01-01")
 
+    get "/api/v1/merchants?sorted=age"
+
+    result = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
 
-    expect(merchant.id).to eq(result_id)
-
-    expect(items_count).to eq(3)
-
+    #Time.parse converts API response string into a Time object to compare
+    expect(Time.parse(result[:data][0][:attributes][:created_at])).to eq(merchant2.created_at)
+    expect(Time.parse(result[:data][1][:attributes][:created_at])).to eq(merchant1.created_at)
+    expect(Time.parse(result[:data][2][:attributes][:created_at])).to eq(merchant3.created_at)
   end
 
 end
-# result[:merchant][:data][:id] #merchant's id
-# result[:items][:data].length #31
