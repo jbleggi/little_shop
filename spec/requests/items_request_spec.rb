@@ -17,8 +17,8 @@ RSpec.describe "Items API", type: :request do
     expect(data[:data].count).to eq(3)
     
     data[:data].each do |item|
-      expect(item[:attributes]).to have_key(:id)
-      expect(item[:attributes][:id]).to be_an Integer
+      expect(item).to have_key(:id)
+      expect(item[:id]).to be_an String
       
       expect(item[:attributes]).to have_key(:name)
       expect(item[:attributes][:name]).to be_a String
@@ -112,5 +112,30 @@ RSpec.describe "Items API", type: :request do
     expect(response).to be_successful
 
     expect(result[:data].count).to eq(3)
+  end
+
+  describe "GET /api/v1/items/:id" do
+    it "fetches single record for item:id" do
+    
+      item = create(:item)
+      
+      get "/api/v1/items/#{item.id}"
+      
+      expect(response).to be_successful
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:data]).to include(
+        id: item.id.to_s,
+        type: 'item',
+        attributes: {
+          name: item.name,
+          description: item.description,
+          unit_price: item.unit_price,
+          merchant_id: item.merchant_id,
+          created_at: item.created_at.as_json,
+          updated_at: item.updated_at.as_json
+        }
+      )
+    end
   end
 end
