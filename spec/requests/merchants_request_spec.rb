@@ -112,7 +112,13 @@ RSpec.describe "Merchants API", type: :request do
       expect(Item.exists?(item2.id)).to be_falsey
     end
     
-    
-  
+    it "returns a 404 Not Found status and an error message" do
+      delete "/api/v1/merchants/99999" 
+
+      expect(response).to have_http_status(:not_found)
+
+      json_response = JSON.parse(response.body)
+      expect(json_response["error"]).to eq("Merchant not found")
+    end
   end
 end
