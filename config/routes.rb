@@ -35,4 +35,6 @@ Rails.application.routes.draw do
   get "/api/v1/items/:id/merchant", to: "api/v1/merchants#show"
   get "/api/v1/merchants/:merchant_id/customers", to: "api/v1/customers#show"
 
+  get "/api/v1/merchants/:id/invoices", to: "api/v1/invoices#index"
+  get "/api/v1/merchants/:merchant_id/invoices?status=<status>", to: "api/v1/invoices#index"
 end
