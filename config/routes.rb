@@ -4,7 +4,9 @@ Rails.application.routes.draw do
       resources :merchants, only: [:index, :show, :create, :update, :destroy] do
         get "/items", to: "items#index"
       end
-      resources :items, only: [:index, :show, :create, :update, :destroy]
+      resources :items, only: [:index, :show, :create, :update, :destroy] do
+        get "/merchant", to: "merchants#show", as: :item_merchant
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -30,4 +32,7 @@ Rails.application.routes.draw do
   delete "api/v1/items/:id", to: "api/v1/items#destroy"
 
   get "/api/v1/merchants/:id/items", to: "api/v1/items#index"
+  get "/api/v1/items/:id/merchant", to: "api/v1/merchants#show"
+  get "/api/v1/merchants/:merchant_id/customers", to: "api/v1/customers#show"
+
 end

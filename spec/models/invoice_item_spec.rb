@@ -1,0 +1,9 @@
+# bundle exec rspec spec/models/invoice_item_spec.rb
+require 'rails_helper'
+
+describe InvoiceItem, type: :model do
+  describe "relationships" do
+    it { should belong_to :invoice }
+    it { should belong_to :item }
+  end
+end
