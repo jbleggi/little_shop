@@ -79,5 +79,28 @@ RSpec.describe "Merchants API", type: :request do
       result = JSON.parse(response.body, symbolize_names: true)
       expect(result[:error]).to eq("Item not found")
     end  
+
+    describe "GET /api/v1/merchants/:id" do
+      it "fetches single record for merchant:id" do
+      
+        merchant = create(:merchant)
+        
+        get "/api/v1/merchants/#{merchant.id}"
+        
+        expect(response).to be_successful
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+  
+        expect(parsed_response[:data]).to include(
+          id: merchant.id.to_s,
+          type: 'merchant',
+          attributes: {
+            id: merchant.id,
+            name: merchant.name,
+            created_at: merchant.created_at.as_json,
+            updated_at: merchant.updated_at.as_json
+          }
+        )
+      end
+    end
   end
 end
