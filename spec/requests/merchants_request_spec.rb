@@ -157,6 +157,31 @@ RSpec.describe "Merchants API", type: :request do
 
       expect(json_response['error']).to eq("Only name can be updated")
     end
+
+    it "returns a 404 status when merchant does not exist" do
+      patch "/api/v1/merchants/99999", params: { merchant: { name: "Some Name" } }.to_json, headers: { 'Content-Type' => 'application/json' }
+
+      expect(response).to have_http_status(:not_found)
+
+      json_response = JSON.parse(response.body)
+      expect(json_response['error']).to eq('Merchant not found')
+    end
+
+    it "returns an error message when name cannot be validated" do
+      merchant = create(:merchant)
+      patch "/api/v1/merchants/#{merchant.id}", params: { merchant: { name: nil } }.to_json, headers: { 'Content-Type' => 'application/json' }
+
+      expect(response).to have_http_status(:unprocessable_entity)
+
+      json_response = JSON.parse(response.body)
+
+      expect(json_response['error']).to eq('Unable to update merchant')
+      expect(json_response['details']).to include("Name can't be blank")
+
+      merchant.reload
+      expect(merchant.name).not_to be_nil
+    end
+
   end
 
 end
