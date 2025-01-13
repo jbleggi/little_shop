@@ -120,5 +120,16 @@ RSpec.describe "Merchants API", type: :request do
       json_response = JSON.parse(response.body)
       expect(json_response["error"]).to eq("Merchant not found")
     end
+
+    it "returns an error message if any attribute is missing" do
+      post '/api/v1/merchants', params: { merchant: { name: '' } }.to_json, headers: { 'Content-Type' => 'application/json' }
+      expect(response).to have_http_status(:unprocessable_entity)
+
+      json_response = JSON.parse(response.body)
+      
+      expect(json_response['error']).to eq('Unable to create merchant')
+      
+      expect(json_response['details']).to include("Name can't be blank")
+    end
   end
 end
