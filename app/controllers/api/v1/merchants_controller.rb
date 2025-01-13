@@ -6,7 +6,6 @@ class Api::V1::MerchantsController < ApplicationController
       merchants = Merchant.all
     end
     render json: MerchantSerializer.new(merchants)
-    #(merchants, is_collection: true) ??
   end
 
   def show
@@ -25,11 +24,14 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def create
+    # Initialize a new Merchant with the permitted parameters
     merchant = Merchant.new(merchant_params)
-
+  
     if merchant.save
+        # Return the newly created merchant using the MerchantSerializer
       render json: MerchantSerializer.new(merchant), status: :created
     else
+      # If validation fails, return an error message
       render json: { error: 'Unable to create merchant', details: merchant.errors.full_messages }, status: :unprocessable_entity
     end
   end

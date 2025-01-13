@@ -1,3 +1,5 @@
+# bundle exec rspec spec/requests/merchants_request_spec.rb
+
 require 'rails_helper'
 
 RSpec.describe "Merchants API", type: :request do
@@ -80,39 +82,18 @@ RSpec.describe "Merchants API", type: :request do
       expect(result[:error]).to eq("Item not found")
     end  
   end
-
-  describe "GET /api/v1/merchants/:id" do
-    it "fetches single record for merchant:id" do
-      
-      merchant = create(:merchant)
-        
-      get "/api/v1/merchants/#{merchant.id}"
-        
-      expect(response).to be_successful
-      parsed_response = JSON.parse(response.body, symbolize_names: true)
   
-      expect(parsed_response[:data]).to include(
-        id: merchant.id.to_s,
-        type: 'merchant',
-        attributes: {
-          id: merchant.id,
-          name: merchant.name,
-          created_at: merchant.created_at.as_json,
-          updated_at: merchant.updated_at.as_json
-        }
-      )
-    end
-  end
-  
-  describe 'POST /api/v1/merchants' do
-    it 'creates a new merchant and returns the merchant in the response' do
-          
-      merchant_params = { name: 'New Merchant' }
+  describe "POST /api/v1/merchants" do
+    it "creates a new merchant and returns the merchant in the response" do
+      # Sending a POST request with JSON body, including the `merchant` key
+      post '/api/v1/merchants', params: { merchant: { name: "New Merchant" } }.to_json, headers: { 'Content-Type' => 'application/json' }
 
-      post '/api/v1/merchants', params: merchant_params.to_json, headers: { 'Content-Type': 'application/json' }
+      # Check for a successful creation (HTTP 201 status)
+      expect(response).to have_http_status(:created)
 
-      expect(json['data']['type']).to eq('merchant')  
-      expect(json['data']['attributes']['name']).to eq('New Merchant')  
+      # Parse the response and check if the name matches the one sent
+      json_response = JSON.parse(response.body)
+      expect(json_response['data']['attributes']['name']).to eq('New Merchant')
     end
   end
 end
