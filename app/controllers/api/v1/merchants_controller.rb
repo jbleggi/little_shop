@@ -1,31 +1,55 @@
 class Api::V1::MerchantsController < ApplicationController
   def index
-    merchants = Merchant.all
-
-    merchants = merchants.order(created_at: :desc) if params[:sorted] == 'age'
-
-    merchants = merchants.map do |merchant|
-      merchant.attributes.merge(item_count: merchant.items.count)
-    end if params[:count] == 'true'
-
-    render json: MerchantSerializer.new(merchants).serializable_hash[:data]
+    if params[:sorted] == 'age'
+      merchants = Merchant.all.order(created_at: :desc)
+    else
+      merchants = Merchant.all
+    end
+    render json: MerchantSerializer.new(merchants)
   end
 
   def show
     merchant = Merchant.find_by(id: params[:id])
-
+    
     if merchant
-      render json: MerchantSerializer.new(merchant).serializable_hash[:data]
+      render json: MerchantSerializer.new(merchant)
     else
-      render json: { message: "Merchant not found", errors: ["Merchant with id #{params[:id]} does not exist"] }, status: :not_found
+      render json: { error: 'Merchant not found' }, status: 404
     end
   end
+
   def create
     merchant = Merchant.new(merchant_params)
+
     if merchant.save
-      render json: MerchantSerializer.new(merchant).serializable_hash[:data], status: :created
+      render json: MerchantSerializer.new(merchant), status: :created
     else
-      render json: { message: "Merchant creation failed", errors: merchant.errors.full_messages }, status: :unprocessable_entity
+      render json: { error: 'Unable to create merchant', details: merchant.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    merchant = Merchant.find_by(id: params[:id])
+
+    if merchant
+      if merchant.update(merchant_params)
+        render json: MerchantSerializer.new(merchant)
+      else
+        render json: { error: 'Unable to update merchant', details: merchant.errors.full_messages }, status: :unprocessable_entity
+      end
+    else
+      render json: { error: 'Merchant not found' }, status: :not_found
+    end
+  end
+
+  def destroy
+    merchant = Merchant.find_by(id: params[:id])
+
+    if merchant
+      merchant.destroy
+      head :no_content 
+    else
+      render json: { error: 'Merchant not found' }, status: :not_found
     end
   end
 
