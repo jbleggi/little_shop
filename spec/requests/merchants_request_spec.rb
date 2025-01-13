@@ -79,28 +79,40 @@ RSpec.describe "Merchants API", type: :request do
       result = JSON.parse(response.body, symbolize_names: true)
       expect(result[:error]).to eq("Item not found")
     end  
+  end
 
-    describe "GET /api/v1/merchants/:id" do
-      it "fetches single record for merchant:id" do
+  describe "GET /api/v1/merchants/:id" do
+    it "fetches single record for merchant:id" do
       
-        merchant = create(:merchant)
+      merchant = create(:merchant)
         
-        get "/api/v1/merchants/#{merchant.id}"
+      get "/api/v1/merchants/#{merchant.id}"
         
-        expect(response).to be_successful
-        parsed_response = JSON.parse(response.body, symbolize_names: true)
+      expect(response).to be_successful
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
   
-        expect(parsed_response[:data]).to include(
-          id: merchant.id.to_s,
-          type: 'merchant',
-          attributes: {
-            id: merchant.id,
-            name: merchant.name,
-            created_at: merchant.created_at.as_json,
-            updated_at: merchant.updated_at.as_json
-          }
-        )
-      end
+      expect(parsed_response[:data]).to include(
+        id: merchant.id.to_s,
+        type: 'merchant',
+        attributes: {
+          id: merchant.id,
+          name: merchant.name,
+          created_at: merchant.created_at.as_json,
+          updated_at: merchant.updated_at.as_json
+        }
+      )
+    end
+  end
+  
+  describe 'POST /api/v1/merchants' do
+    it 'creates a new merchant and returns the merchant in the response' do
+          
+      merchant_params = { name: 'New Merchant' }
+
+      post '/api/v1/merchants', params: merchant_params.to_json, headers: { 'Content-Type': 'application/json' }
+
+      expect(json['data']['type']).to eq('merchant')  
+      expect(json['data']['attributes']['name']).to eq('New Merchant')  
     end
   end
 end
