@@ -96,4 +96,23 @@ RSpec.describe "Merchants API", type: :request do
       expect(json_response['data']['attributes']['name']).to eq('New Merchant')
     end
   end
+
+  describe "DELETE /api/v1/merchants/:id" do
+    it "deletes the merchant and associated items and returns no content" do
+      merchant = create(:merchant)
+      item1 = create(:item, merchant: merchant)
+      item2 = create(:item, merchant: merchant)
+
+      delete "/api/v1/merchants/#{merchant.id}"
+
+      expect(response).to have_http_status(:no_content)
+
+      expect(Merchant.exists?(merchant.id)).to be_falsey
+      expect(Item.exists?(item1.id)).to be_falsey
+      expect(Item.exists?(item2.id)).to be_falsey
+    end
+    
+    
+  
+  end
 end
