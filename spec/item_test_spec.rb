@@ -8,11 +8,12 @@ RSpec.describe ItemSerializer, type: :serializer do
 
       # Act: Serialize the item
       serialize_item = ItemSerializer.new(item).to_json
+      serialized_data = JSON.parse(serialize_item, symbolize_names: true)[:data]
 
       # Assert: Verify the serialized JSON structure
-      expect(serialize_item[:data]).to include(
-        id: item.id.to_s, # Serializer returns IDs as strings
-        type: :item,      # The JSONAPI type
+      expect(serialized_data).to include(
+        id: item.id.to_s, 
+        type: 'item',      
         attributes: {
           id: item.id,
           name: item.name,

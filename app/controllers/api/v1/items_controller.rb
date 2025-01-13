@@ -52,6 +52,7 @@ class Api::V1::ItemsController < ApplicationController
       head :no_content 
     else
       render json: { error: 'Item not found' }, status: :not_found
+
     end
   end
 
