@@ -133,12 +133,12 @@ RSpec.describe "Merchants API", type: :request do
     end
   end
 
-  describe "PUT /api/v1/merchants/:id" do
+  describe "PATCH /api/v1/merchants/:id" do
     it "updates and returns the merchant" do
       merchant = create(:merchant)
       updated_params = { name: "Updated Merchant Name" }
 
-      put "/api/v1/merchants/#{merchant.id}", params: { merchant: updated_params }.to_json, headers: { 'Content-Type' => 'application/json' }
+      patch "/api/v1/merchants/#{merchant.id}", params: { merchant: updated_params }.to_json, headers: { 'Content-Type' => 'application/json' }
 
       expect(response).to be_successful
 
@@ -146,7 +146,17 @@ RSpec.describe "Merchants API", type: :request do
       expect(json_response['data']['attributes']['name']).to eq("Updated Merchant Name")
     end
 
+    it "returns error message if attributes other than name are updated" do
+      merchant = create(:merchant)
+      invalid_params = { name: "Updated Merchant", address: "123 New Street" }
+      patch "/api/v1/merchants/#{merchant.id}", params: { merchant: invalid_params }.to_json, headers: { 'Content-Type' => 'application/json' }
 
+      expect(response).to have_http_status(:unprocessable_entity)
+
+      json_response = JSON.parse(response.body)
+
+      expect(json_response['error']).to eq("Only name can be updated")
+    end
   end
 
 end
