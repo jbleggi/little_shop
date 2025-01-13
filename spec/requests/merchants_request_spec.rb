@@ -132,4 +132,21 @@ RSpec.describe "Merchants API", type: :request do
       expect(json_response['details']).to include("Name can't be blank")
     end
   end
+
+  describe "PUT /api/v1/merchants/:id" do
+    it "updates and returns the merchant" do
+      merchant = create(:merchant)
+      updated_params = { name: "Updated Merchant Name" }
+
+      put "/api/v1/merchants/#{merchant.id}", params: { merchant: updated_params }.to_json, headers: { 'Content-Type' => 'application/json' }
+
+      expect(response).to be_successful
+
+      json_response = JSON.parse(response.body)
+      expect(json_response['data']['attributes']['name']).to eq("Updated Merchant Name")
+    end
+
+
+  end
+
 end
