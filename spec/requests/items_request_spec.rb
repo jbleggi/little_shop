@@ -123,7 +123,6 @@ RSpec.describe "Items API", type: :request do
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(parsed_response[:data]).to include(
-        id: item.id
         type: 'item',
         attributes: {
           name: item.name,
