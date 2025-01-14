@@ -51,7 +51,7 @@ RSpec.describe "Items API", type: :request do
     expect(response).to be_successful
     data = JSON.parse(response.body, symbolize_names: true)
 
-    expect(data[:data][:attributes][:id]).to eq(item1.id)
+    expect(data[:data][:id]).to eq(item1.id.to_s)
   end
 
   it "destroys one item based on id" do

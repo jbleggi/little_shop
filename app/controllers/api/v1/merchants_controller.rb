@@ -25,11 +25,14 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def create
+    # Initialize a new Merchant with the permitted parameters
     merchant = Merchant.new(merchant_params)
-
+  
     if merchant.save
+        # Return the newly created merchant using the MerchantSerializer
       render json: MerchantSerializer.new(merchant), status: :created
     else
+      # If validation fails, return an error message
       render json: { error: 'Unable to create merchant', details: merchant.errors.full_messages }, status: :unprocessable_entity
     end
   end
@@ -38,12 +41,18 @@ class Api::V1::MerchantsController < ApplicationController
     merchant = Merchant.find_by(id: params[:id])
 
     if merchant
-      if merchant.update(merchant_params)
+      if params[:merchant].keys != ["name"]
+        # If any attribute other than 'name' is passed, return an error
+        render json: { error: 'Only name can be updated' }, status: :unprocessable_entity
+      elsif merchant.update(merchant_params)
+        # If update is successful, return the updated merchant
         render json: MerchantSerializer.new(merchant)
       else
+        # If validation fails on the name, return errors
         render json: { error: 'Unable to update merchant', details: merchant.errors.full_messages }, status: :unprocessable_entity
       end
     else
+      # If the merchant does not exist, return a not found error
       render json: { error: 'Merchant not found' }, status: :not_found
     end
   end
