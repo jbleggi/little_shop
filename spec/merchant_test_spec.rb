@@ -20,7 +20,8 @@ RSpec.describe MerchantSerializer, type: :serializer do
                     updated_at: merchant.updated_at.as_json
                 }
 
-            serialized_data = JSON.parse(serialize_merchant, symbolize_names: true)[:data]
+                serialized_data = JSON.parse(serialize_merchant, symbolize_names: true)[:data]
+
           
             # Assert: Verify the serialized JSON structure
             expect(serialized_data).to include(
