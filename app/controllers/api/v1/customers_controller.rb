@@ -1,16 +1,25 @@
 class Api::V1::CustomersController < ApplicationController
   def show
-    if params[:merchant_id]
-      merchant = Merchant.find_by(id: params[:merchant_id])
+    # merchant object by given id
+    merchant = Merchant.find_by(id: params[:merchant_id])
+    # list invoices for merchant
+    invoices = Invoice.where(merchant_id: params[:merchant_id])
+    # pluck all customer ids from invoices
+    invoices_customers = invoices.pluck(:customer_id)
+    # find all customers from invoices_customers 
+    customers = Customer.where(id: invoices_customers)
+    # find given invoice status for a merchant_id
+    # invoices_status = invoices.where(status: params[:status])
 
-      if merchant
-        customers = Customer.where(merchant_id: merchant.id)
-        render json: customers, status: :ok
+    if merchant.nil?
+      render json: {
+        message: "Your query could not be completed;",
+        errors: "Merchant not found."  
+          }, 
+      status: :not_found
+      
       else
-        render json: { error: "Merchant not found" }, status: :not_found
-      end
-    else
-      render json: { error: "Merchant ID is required" }, status: :unprocessable_entity
+        render json: CustomerSerializer.new(customers)
     end
   end
 end

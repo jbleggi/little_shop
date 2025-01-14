@@ -1,3 +1,5 @@
+# bundle exec rspec spec/requests/items_request_spec.rb
+
 require 'rails_helper'
 
 RSpec.describe "Items API", type: :request do
