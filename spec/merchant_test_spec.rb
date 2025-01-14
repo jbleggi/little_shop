@@ -21,6 +21,7 @@ RSpec.describe MerchantSerializer, type: :serializer do
                 }
 
                 serialized_data = JSON.parse(serialize_merchant, symbolize_names: true)[:data]
+
           
             # Assert: Verify the serialized JSON structure
             expect(serialized_data).to include(
