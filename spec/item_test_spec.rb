@@ -15,7 +15,6 @@ RSpec.describe ItemSerializer, type: :serializer do
         id: item.id.to_s, 
         type: 'item',      
         attributes: {
-          id: item.id,
           name: item.name,
           description: item.description,
           unit_price: item.unit_price,
