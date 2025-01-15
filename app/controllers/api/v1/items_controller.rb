@@ -11,12 +11,12 @@ class Api::V1::ItemsController < ApplicationController
     render json: ItemSerializer.new(items)
   end
 
-  def show 
+  def show
     item = Item.find_by(id: params[:id])
     if item
       render json: ItemSerializer.new(item)
     else
-      render json: { error: 'Item not found' }, status: 404
+      render json: { data: {} }, status: :ok
     end
   end
 
@@ -32,7 +32,7 @@ class Api::V1::ItemsController < ApplicationController
 
   def update
     item = Item.find_by(id: params[:id])
-
+  
     if item
       if item.update(item_params)
         render json: ItemSerializer.new(item)
@@ -40,7 +40,7 @@ class Api::V1::ItemsController < ApplicationController
         render json: { error: 'Unable to update item', details: item.errors.full_messages }, status: :unprocessable_entity
       end
     else
-      render json: { error: 'Item not found' }, status: :not_found
+      render json: { data: {} }, status: :ok
     end
   end
 
@@ -53,6 +53,16 @@ class Api::V1::ItemsController < ApplicationController
     else
       render json: { error: 'Item not found' }, status: :not_found
 
+    end
+  end
+
+  def find
+    item = Item.where('name ILIKE ?', "%#{params[:name]}%").first
+  #  require 'pry'; binding.pry
+    if item
+      render json: ItemSerializer.new(item), status: :ok
+    else
+      render json: { data: {} }, status: :ok
     end
   end
 

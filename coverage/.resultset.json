@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jillian/little_shop/config/environment.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/jillian/little_shop/config/application.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/application.rb": {
         "lines": [
           1,
           null,
@@ -58,7 +58,7 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/config/boot.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -66,7 +66,7 @@
           1
         ]
       },
-      "/Users/jillian/little_shop/config/environments/test.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/environments/test.rb": {
         "lines": [
           1,
           1,
@@ -135,7 +135,7 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/config/initializers/cors.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/initializers/cors.rb": {
         "lines": [
           null,
           null,
@@ -164,7 +164,7 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/config/initializers/filter_parameter_logging.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -176,7 +176,7 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/config/initializers/inflections.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -196,7 +196,34 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/spec/factories/factory_bot_item.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/spec/factories/factory_bot_customer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/spec/factories/factory_bot_invoice.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/spec/factories/factory_bot_item.rb": {
         "lines": [
           1,
           1,
@@ -208,81 +235,98 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/spec/factories/factory_bot_merchants.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/spec/factories/factory_bot_merchant.rb": {
         "lines": [
           1,
           1,
-          10,
+          67,
           null,
           null
         ]
       },
-      "/Users/jillian/little_shop/config/routes.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jillian/little_shop/spec/support/factory_bot.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jillian/little_shop/app/models/merchant.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/config/routes.rb": {
         "lines": [
           1,
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
-      "/Users/jillian/little_shop/app/models/application_record.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/spec/support/factory_bot.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/jillian/little_shop/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/app/models/merchant.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
           1,
@@ -311,6 +355,50 @@
           null,
           null,
           1,
+          null,
+          4,
+          null,
+          4,
+          null,
+          2,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          6,
+          4,
+          null,
+          0,
+          4,
+          null,
+          2,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
           1,
           null,
           1,
@@ -321,45 +409,20 @@
           null,
           null,
           1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
           null,
           1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
+          8,
           null,
           null
         ]
       },
-      "/Users/jillian/little_shop/app/controllers/application_controller.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jillian/little_shop/app/serializers/merchant_serializer.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/app/serializers/merchant_serializer.rb": {
         "lines": [
           1,
           1,
@@ -368,7 +431,22 @@
           null
         ]
       },
-      "/Users/jillian/little_shop/app/models/item.rb": {
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/app/models/invoice.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/octogrim-mac/turing_school/2mod/projects/little_shop/app/models/item.rb": {
         "lines": [
           1,
           1,
@@ -377,6 +455,6 @@
         ]
       }
     },
-    "timestamp": 1736806397
+    "timestamp": 1736962604
   }
 }

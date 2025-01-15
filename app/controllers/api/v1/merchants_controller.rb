@@ -68,6 +68,16 @@ class Api::V1::MerchantsController < ApplicationController
     end
   end
 
+  def find_all
+    merchants = Merchant.where('name ILIKE ?', "%#{params[:name]}%")
+  
+    if merchants.present?
+      render json: MerchantSerializer.new(merchants), status: :ok
+    else
+      render json: { data: [] }, status: :ok
+    end
+  end
+
   private
 
   def merchant_params
