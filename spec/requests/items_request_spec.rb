@@ -138,4 +138,19 @@ RSpec.describe "Items API", type: :request do
       )
     end
   end
+
+  describe 'GET /api/v1/items/find' do
+    it 'finds a single item by name' do
+      item = create(:item, name: 'Test Item')
+  
+      get '/api/v1/items/find?name=Test'
+  
+      expect(response).to be_successful
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+  
+      returned_item = parsed_response[:data]
+      expect(returned_item[:id]).to eq(item.id.to_s)
+      expect(returned_item[:attributes][:name]).to eq('Test Item')
+    end
+  end
 end

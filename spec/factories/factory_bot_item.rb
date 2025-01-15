@@ -1,8 +1,8 @@
 FactoryBot.define do
-    factory :item do
-      name { "Test Item #{rand(1000)}" }
-      description { "This is a test item." }
-      unit_price { 100.0 }
-      association :merchant
-    end
+  factory :item do
+    name { "Test Item" }
+    description { "Sample description" }
+    unit_price { 10.99 }
+    merchant
   end
+end

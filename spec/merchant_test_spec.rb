@@ -7,20 +7,9 @@ RSpec.describe MerchantSerializer, type: :serializer do
       merchant = create(:merchant)
           
       # Act: Serialize the merchant
-      serialized_json = MerchantSerializer.new(merchant).to_json
 
-            expect(serialize_merchant[:data]).to include(
-                id: merchant.id,
-                type: :merchant,
-                attributes: {
-                    id: merchant.id,
-                    name: merchant.name,
-                    created_at: merchant.created_at.as_json,
-                    updated_at: merchant.updated_at.as_json
-                }
-
-                serialized_data = JSON.parse(serialize_merchant, symbolize_names: true)[:data]
-
+            serialized_json = MerchantSerializer.new(merchant).to_json
+            serialized_data = JSON.parse(serialized_json, symbolize_names: true)[:data]
           
             # Assert: Verify the serialized JSON structure
             expect(serialized_data).to include(
@@ -33,6 +22,6 @@ RSpec.describe MerchantSerializer, type: :serializer do
                 updated_at: merchant.updated_at.as_json,
               }
             )
-          end
     end
+  end
 end
